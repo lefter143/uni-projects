@@ -1,0 +1,9 @@
+﻿  gasket.c
+C:\Users\jiyuu\source\repos\BarnsleyFractal\BarnsleyFractal\gasket.c(45,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\jiyuu\source\repos\BarnsleyFractal\BarnsleyFractal\gasket.c(48,27): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\jiyuu\source\repos\BarnsleyFractal\BarnsleyFractal\gasket.c(49,39): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\jiyuu\source\repos\BarnsleyFractal\BarnsleyFractal\gasket.c(52,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\jiyuu\source\repos\BarnsleyFractal\BarnsleyFractal\gasket.c(53,38): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\jiyuu\source\repos\BarnsleyFractal\BarnsleyFractal\gasket.c(56,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\jiyuu\source\repos\BarnsleyFractal\BarnsleyFractal\gasket.c(57,38): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  BarnsleyFractal.vcxproj -> C:\Users\jiyuu\source\repos\BarnsleyFractal\x64\Debug\BarnsleyFractal.exe

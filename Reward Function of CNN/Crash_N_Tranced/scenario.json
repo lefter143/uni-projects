@@ -1,0 +1,26 @@
+{
+  "crop": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "done": {
+    "variables": {
+      "current_level_identifier": {
+        "measurement": "delta",
+        "op": "greater-or-equal",
+        "reference": 1
+      },
+      "lives": {
+        "op": "equal"
+      }
+    }
+  },
+  "reward": {
+    "script": "lua:total_reward"
+  },
+  "scripts": [
+    "reward.lua"
+  ]
+}

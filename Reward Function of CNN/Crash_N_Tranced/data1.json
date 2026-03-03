@@ -1,0 +1,28 @@
+{
+  "info": {
+    "crash_x": {
+      "address": 67108883,
+      "type": ">u2"
+    },
+    "crates": {
+      "address": 33564392,
+      "type": "|u1"
+    },
+    "current_level_identifier": {
+      "address": 50363816,
+      "type": ">n8"
+    },
+    "enemies_tokill": {
+      "address": 33596056,
+      "type": "|u1"
+    },
+    "lives": {
+      "address": 33564393,
+      "type": ">u4"
+    },
+    "wumpa_fruit": {
+      "address": 33564388,
+      "type": "|u1"
+    }
+  }
+}

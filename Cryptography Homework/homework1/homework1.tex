@@ -1,0 +1,19 @@
+\documentclass[12pt]{article}
+\usepackage[english,greek]{babel}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\begin{document}
+\centering
+\title{\selectlanguage{english}Homework 1}
+\author{\selectlanguage{greek}Ονοματεπώνυμο: Ελευθέριος Παντζαρτζής \\  ΑΕΜ: 4344}
+\date{\today}
+\maketitle
+\begin{description}
+   \item [\selectlanguage{english}(i)] \selectlanguage{greek}
+   Η πιθανότητα $Pr[C='\beta']$ είναι: $Pr[C='\beta']=Pr[M='\alpha']*Pr[K=1]+Pr[M='\omega']*Pr[K=2]$ εφόσον μόνο για αυτές τις τιμές των κλειδιών παίρνουμε την τιμή \selectlanguage{english} ciphertext \selectlanguage{greek} β. Και επειδή όλες οι περιπτώσεις κλειδιών είναι ισοπίθανες έχουμε: $Pr[K=1]=Pr[K=2]=1/24$.\\Άρα: $Pr[C='\beta']=0.7*1/24+0.3*1/24=1/24=0.041\overline{6}$
+   \item [\selectlanguage{english}(ii)]\selectlanguage{greek}
+   Ξανά η πιθανότητα $Pr[C='\theta\pi\delta']$ είναι: $Pr[C='\theta\pi\delta']=Pr[C='\epsilon\nu\alpha']*Pr[K=3]+Pr[M='\delta\upsilon\o']*0$(διότι δεν υπάρχει κανένα κλειδί που να μετατρέπει το $\delta\upsilon\o$ σε $\theta\pi\delta$).\\
+   Άρα: $Pr[C='\theta\pi\delta']=0.3*1/24+0=0.0125$.
+   \bigbreak
+\end{description}
+\end{document}

@@ -1,0 +1,7 @@
+cd "C:\Users\jiyuu\Downloads\Gym Retro-0.8.0.dev3+gf347d7e-win64"
+python -m venv RAINBOW
+cd RAINBOW
+.\Scripts\activate
+
+
+(RAINBOW) C:\Users\jiyuu\Downloads\Gym Retro-0.8.0.dev3+gf347d7e-win64\RAINBOW\Lib\site-packages\retro>python -m retro.examples.interactive --game "Crash_N_Tranced"

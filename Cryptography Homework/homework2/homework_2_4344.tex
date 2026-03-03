@@ -1,0 +1,16 @@
+\documentclass[12pt]{article}
+\usepackage[english,greek]{babel}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\begin{document}
+\centering
+\title{\selectlanguage{english}Homework 2}
+\author{\selectlanguage{greek}Ονοματεπώνυμο: Ελευθέριος Παντζαρτζής \\  ΑΕΜ: 4344}
+\date{\today}
+\maketitle
+\begin{description}
+   \item [\textbf{1)}] \selectlanguage{greek} Ένας τρόπος για να γίνει δίκαιο το νόμισμα είναι στο πείραμα ρίψης νομίσματος να μην μετράμε τις συνεχόμενες εμφανίσεις του νομίσματος ως \selectlanguage{english}Heads(H) \selectlanguage{greek}ή \selectlanguage{english}Tails(T)\selectlanguage{greek}. Δηλαδή αν έχουμε ποτέ ακολουθία \selectlanguage{english}H, H \selectlanguage{greek}γίνεται \selectlanguage{english}H \selectlanguage{greek}και \selectlanguage{english}T, T \selectlanguage{greek}γίνεται \selectlanguage{english}T\selectlanguage{greek}. Έτσι εξασφαλίζεται ότι το νόμισμα θα είναι δίκαιο αν το ρίξουμε ζυγό αριθμό φορών.
+   \item [\textbf{2)}] Το σύστημα Καίσαρα θα έχει τέλεια ασφάλεια(Τ.Α.) αν το \selectlanguage{english}k\selectlanguage{greek} είναι ομοιόμορφη τυχαία μεταβλητή πάνω στο Ελληνικό αλφάβητο(0:α,...,23:ω). Επίσης πρέπει να είναι τουλάχιστον όσο μεγάλο όσο το μήνυμα που στέλνεται, δηλαδή να μην επαναχρησιμοποιείται και σε άλλο γράμμα. Εφόσον κάθε κλειδί θα επιλέγεται τυχαία σε κάθε γράμμα, το τροποποιημένο σύστημα του Καίσαρα θα λειτουργεί ως \selectlanguage{english}One-Time Pad(OTP) mod 24\selectlanguage{greek} που γνωρίζουμε ότι έχει Τ.Α.
+   \item [\textbf{3)}] Ακόμη και αν δεν μπορούσαμε να ανακτήσουμε πλήρως το \selectlanguage{english}m\selectlanguage{greek}, αν υπάρχει ένας εύκολος τρόπος να υπολογίσουμε κάποια ιδιότητα του \selectlanguage{english}m \selectlanguage{greek}από το \selectlanguage{english}c\selectlanguage{greek}, τότε το σύστημα δεν είναι σημασιολογικά ασφαλές. Ένα απλό \selectlanguage{english}predicate\selectlanguage{greek} που μπορούμε να χρησιμοποιήσουμε είναι το κριτήριο του \selectlanguage{english}Euler\selectlanguage{greek}: $(\frac{c}{p})=c^{(\frac{p-1}{2})}$. Με αυτό μπορούμε να γνωρίζουμε αν ένας αριθμός είναι \selectlanguage{english}quadratic residue mod\selectlanguage{greek} κάποιου πρώτου αριθμού, αυξάνοντας την πιθανότητα ευρέσής του στην συνάρτηση πλεονεκτήματος(\selectlanguage{english}advantage function).
+\end{description}
+\end{document}
