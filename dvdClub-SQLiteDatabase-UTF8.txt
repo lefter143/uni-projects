@@ -1,0 +1,97 @@
+--
+-- File generated with SQLiteStudio v3.1.1 
+--
+-- Text encoding used: System
+--
+PRAGMA foreign_keys = off;
+BEGIN TRANSACTION;
+
+-- Table: DVD
+CREATE TABLE [DVD] (
+	"ID"		integer NOT NULL,
+	"IDΤαινίας"		integer NOT NULL,
+	"Τύπος"		varchar(4) COLLATE NOCASE,
+	"Ποσότητα"		integer,
+	"Τιμή"		integer,
+    PRIMARY KEY ([ID])
+,
+    FOREIGN KEY ([IDΤαινίας])
+        REFERENCES [ΤΑΙΝΙΑ]([ID])
+);
+INSERT INTO DVD (ID, IDΤαινίας, Τύπος, Ποσότητα, Τιμή) VALUES (1, 1, '3D', 3, 2);
+INSERT INTO DVD (ID, IDΤαινίας, Τύπος, Ποσότητα, Τιμή) VALUES (2, 1, 'SD', 1, 3);
+INSERT INTO DVD (ID, IDΤαινίας, Τύπος, Ποσότητα, Τιμή) VALUES (3, 2, '3D', 2, 2);
+
+-- Table: ΕΝΟΙΚΙΑΣΗ
+CREATE TABLE [ΕΝΟΙΚΙΑΣΗ] (
+	"IDΠελάτη"		integer NOT NULL,
+	"IDdvd"		integer NOT NULL,
+	"Από"		datetime NOT NULL,
+	"Έως"		datetime,
+    PRIMARY KEY ([IDΠελάτη], [IDdvd])
+,
+    FOREIGN KEY ([IDdvd])
+        REFERENCES [DVD]([ID]),
+    FOREIGN KEY ([IDΠελάτη])
+        REFERENCES [ΠΕΛΑΤΗΣ]([ID])
+);
+INSERT INTO ΕΝΟΙΚΙΑΣΗ (IDΠελάτη, IDdvd, Από, Έως) VALUES (1, 1, '2013-07-10 00:00:00', '2013-09-10 00:00:00');
+INSERT INTO ΕΝΟΙΚΙΑΣΗ (IDΠελάτη, IDdvd, Από, Έως) VALUES (1, 2, '2013-09-20 00:00:00', '2013-11-20 00:00:00');
+INSERT INTO ΕΝΟΙΚΙΑΣΗ (IDΠελάτη, IDdvd, Από, Έως) VALUES (2, 1, '2013-09-10 00:00:00', NULL);
+
+-- Table: ΠΕΛΑΤΗΣ
+CREATE TABLE [ΠΕΛΑΤΗΣ] (
+	"ID"		integer NOT NULL,
+	"Επίθετο"		varchar(30) NOT NULL COLLATE NOCASE,
+	"Τηλέφωνο"		varchar(10) COLLATE NOCASE,
+	"Οδός"		varchar(30) COLLATE NOCASE,
+	"Αριθμός"		varchar(30) COLLATE NOCASE,
+    PRIMARY KEY ([ID])
+
+);
+INSERT INTO ΠΕΛΑΤΗΣ (ID, Επίθετο, Τηλέφωνο, Οδός, Αριθμός) VALUES (1, 'Perkins', '246801', 'Σολωμού', '6Α');
+INSERT INTO ΠΕΛΑΤΗΣ (ID, Επίθετο, Τηλέφωνο, Οδός, Αριθμός) VALUES (2, 'Παπαδόπουλος', '246801', 'Φιλίππου', '16');
+INSERT INTO ΠΕΛΑΤΗΣ (ID, Επίθετο, Τηλέφωνο, Οδός, Αριθμός) VALUES (3, 'Παλαιολόγος', '987654', 'Σωκράτους', '20');
+
+-- Table: ΣΥΝΤΕΛΕΣΤΗΣ
+CREATE TABLE [ΣΥΝΤΕΛΕΣΤΗΣ] (
+	"ID"		integer NOT NULL,
+	"Όνομα"		varchar(50) COLLATE NOCASE,
+    PRIMARY KEY ([ID])
+
+);
+INSERT INTO ΣΥΝΤΕΛΕΣΤΗΣ (ID, Όνομα) VALUES (1, 'Alfred Hitchcock');
+INSERT INTO ΣΥΝΤΕΛΕΣΤΗΣ (ID, Όνομα) VALUES (2, 'Grace Kelly');
+INSERT INTO ΣΥΝΤΕΛΕΣΤΗΣ (ID, Όνομα) VALUES (3, 'Anthony Perkins');
+
+-- Table: ΤΑΙΝΙΑ
+CREATE TABLE [ΤΑΙΝΙΑ] (
+	"ID"		integer NOT NULL,
+	"Τίτλος"		varchar(100) COLLATE NOCASE,
+	"Χρονιά"		integer,
+    PRIMARY KEY ([ID])
+
+);
+INSERT INTO ΤΑΙΝΙΑ (ID, Τίτλος, Χρονιά) VALUES (1, 'Rear Window', 1954);
+INSERT INTO ΤΑΙΝΙΑ (ID, Τίτλος, Χρονιά) VALUES (2, 'Psycho', 1960);
+INSERT INTO ΤΑΙΝΙΑ (ID, Τίτλος, Χρονιά) VALUES (3, 'Ben-Hur', 1959);
+
+-- Table: ΤΣ
+CREATE TABLE [ΤΣ] (
+	"IDΤαινίας"		integer NOT NULL,
+	"IDΣυντελεστή"		integer NOT NULL,
+	"Ρόλος"		varchar(30) COLLATE NOCASE,
+    PRIMARY KEY ([IDΤαινίας], [IDΣυντελεστή])
+,
+    FOREIGN KEY ([IDΣυντελεστή])
+        REFERENCES [ΣΥΝΤΕΛΕΣΤΗΣ]([ID]),
+    FOREIGN KEY ([IDΤαινίας])
+        REFERENCES [ΤΑΙΝΙΑ]([ID])
+);
+INSERT INTO ΤΣ (IDΤαινίας, IDΣυντελεστή, Ρόλος) VALUES (1, 1, 'Σκηνοθέτης');
+INSERT INTO ΤΣ (IDΤαινίας, IDΣυντελεστή, Ρόλος) VALUES (1, 2, 'Ηθοποιός');
+INSERT INTO ΤΣ (IDΤαινίας, IDΣυντελεστή, Ρόλος) VALUES (2, 1, 'Σκηνοθέτης');
+INSERT INTO ΤΣ (IDΤαινίας, IDΣυντελεστή, Ρόλος) VALUES (2, 3, 'Ηθοποιός');
+
+COMMIT TRANSACTION;
+PRAGMA foreign_keys = on;
